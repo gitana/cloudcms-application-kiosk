@@ -1,0 +1,158 @@
+/* patch for jquerymobile page flicker */
+.ui-page
+{
+    -webkit-backface-visibility: hidden;
+}
+
+body
+{
+	overflow: hidden;
+}
+
+.tight
+{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.full
+{
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+}
+
+
+#splashContainer
+{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#splashContainer:hover
+{
+    cursor: pointer;
+}
+
+#splash-background
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#splash-logo
+{
+    position: relative;
+    top: 25%;
+    z-index: 10;
+    width: 100%;
+}
+
+#splash-logo IMG
+{
+    width: 65%;
+}
+
+#splash-logo H1
+{
+    color: black;
+}
+
+#rotatorContainer
+{
+    background-image:url(media/background.jpg);
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    top: 0px;
+	left: 0px;
+}
+
+#rotator-background
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#rotator-items-container
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 10;
+}
+
+.items
+{
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    width: 80%;
+    height: 60%;
+	top: -70px;
+	left: -20px;
+}
+
+.roundabout-moveable-item
+{
+/*
+    height: 24em;
+    width: 24em;
+*/
+	height: 30em;
+	width: 30em;
+    text-align: center;
+    cursor: pointer;
+}
+
+.roundabout-moveable-item img
+{
+    width: 120%;
+}
+
+.roundabout-in-focus
+{
+    cursor: default;
+}
+
+/*
+span
+{
+    display: block;
+}
+*/
+
+
+
+
+.turn-page{
+    border: 1px gray solid;
+}
+/*
+.turn-page.p1{
+    background-color:#ccc;
+    background-image:url(http://demo.cloudcms.net/proxy/repositories/e8830d05450f13bd6b40/branches/3faac15c7bf3acb6cfbb/nodes/c3b6f7c3c614c4888717/attachments/preview_medium);
+    background-size:100% 100%;
+}
+.turn-page.p2{
+    background-color:#ccc;
+    background-image:url(http://demo.cloudcms.net/proxy/repositories/e8830d05450f13bd6b40/branches/3faac15c7bf3acb6cfbb/nodes/c3b6f7c3c614c4888717/attachments/preview_medium);
+    background-size:100% 100%;
+}
+.turn-page.p3{
+    background-color:#ccc;
+    background-image:url(http://demo.cloudcms.net/proxy/repositories/e8830d05450f13bd6b40/branches/3faac15c7bf3acb6cfbb/nodes/c3b6f7c3c614c4888717/attachments/preview_medium);
+    background-size:100% 100%;
+}
+*/
+

@@ -1,0 +1,189 @@
+<html>
+	<head>
+        <title>Cloud CMS Kiosk</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+        <script type="text/javascript" src="lib/gitana/js/gitana.js"></script>
+        <script type="text/javascript" src="lib/jquery/js/jquery-1.7.1.min.js"></script>
+
+        <script type="text/javascript" src="lib/jqm/jquery.mobile-1.1.1.min.js"></script>
+        <script type="text/javascript" src="lib/jqm-plugins/js/jquery.querystring.js"></script>
+        <link rel="stylesheet" href="lib/jqm/jquery.mobile-1.1.1.min.css" />
+        <script type="text/javascript" src="lib/jquery-plugins/js/jquery.easing.1.3.js"></script>
+        <script type="text/javascript" src="lib/jquery-plugins/js/jquery.event.drag-2.0.min.js"></script>
+        <script type="text/javascript" src="lib/jquery-plugins/js/jquery.event.drop-2.0.min.js"></script>
+        <script type="text/javascript" src="lib/roundabout/js/jquery.roundabout.min.js"></script>
+        <script type="text/javascript" src="lib/roundabout/js/jquery.roundabout-shapes.min.js"></script>
+
+        <script type="text/javascript" src="lib/insight/js/insight.js"></script>
+
+        <!-- virtual keyboard -->
+        <script type="text/javascript" src="lib/keyboard/jquery.keyboard.js"></script>
+        <script type="text/javascript" src="lib/keyboard/jquery.ui.position.js"></script>
+        <script type="text/javascript" src="lib/keyboard/jquery.keyboard.extension-mobile.js"></script>
+        <script type="text/javascript" src="lib/keyboard/jquery.keyboard.extension-navigation.js"></script>
+        <script type="text/javascript" src="lib/keyboard/jquery.keyboard.extension-typing.js"></script>
+        <link rel="stylesheet" type="text/css" href="lib/keyboard/keyboard.css" />
+
+        <!-- turn.js -->
+        <script type="text/javascript" src="lib/turnjs/js/turn.js"></script>
+        <script type="text/javascript" src="lib/turnjs-magazine/magazine.js"></script>
+        <link rel="stylesheet" type="text/css" href="lib/turnjs-magazine/magazine.css" />
+
+        <!-- jquery mobile simple dialog 2 plugin -->
+        <script type="text/javascript" src="lib/simpledialog2/js/jquery.mobile.simpledialog2.js"></script>
+        <link rel="stylesheet" type="text/css" href="lib/simpledialog2/css/jquery.mobile.simpledialog2.css" />
+
+        <script src="js/index.js"></script>
+	</head>
+	<body>
+
+
+        <!-- SPLASH PAGE -->
+        <div data-role="page" data-theme="a" id="splash" class="full">
+
+            <div data-role="content" class="tight full">
+                <div id="splashContainer">
+
+                    <div id="splash-background">
+                        <video width="100%" height="100%" autoplay="autoplay" loop="loop">
+                            <source src="media/splash.mp4" type="video/mp4" />
+                            <source src="media/splash.ogv" type="video/ogg" />
+                            Sorry - your browser is not supported!
+                        </video>
+                    </div>
+
+                    <div id="splash-logo" align="center">
+                        <img src="media/cloudcms3.png"/>
+                        <h1>
+                            Touch the screen to start
+                        </h1>
+
+                    </div>
+
+                </div>
+            </div><!-- /content -->
+
+        </div>
+
+
+        <!-- SIGN-IN PAGE -->
+        <div data-role="page" data-theme="a" id="signin" data-add-back-btn="true">
+
+            <div data-role="header">
+                <h1>Let's get Started!</h1>
+            </div><!-- /header -->
+
+            <div data-role="content" style="overflow: hidden">
+                <form action="" method="post" id="signinform">
+
+                    <br/>
+
+                    <div align="center">
+                        <img src="media/cloudcms.png" width="400px" />
+                    </div>
+
+                    <br/>
+
+                    <label for="_name">Name:</label>
+                    <input type="text" name="name" id="_name" value="" class="kbtext"  />
+
+                    <label for="_email">Email:</label>
+                    <input type="email" name="email" id="_email" value="" class="kbtext" />
+
+                    <label for="_zipcode">Zip Code:</label>
+                    <input type="number" name="zipcode" id="_zipcode" value=""  class="kbzipcode" />
+
+                    <br/>
+
+                    <button type="submit" id="_submit">Submit</button>
+
+                </form>
+            </div><!-- /content -->
+
+        </div><!-- /page -->
+
+        <!-- ROTATOR PAGE -->
+        <div data-role="page" data-theme="a" id="rotator" class="full">
+
+            <div data-role="header">
+                <h1 class="selectorTitle">Select a Document</h1>
+                <a href="#splash" data-icon="delete" class="quitbutton ui-btn-right" data-transition="fade">Quit</a>
+            </div><!-- /header -->
+
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#rotator" class="ui-btn-active" data-transition="fade">Rotator View</a></li>
+                    <li><a href="#list" data-transition="fade">List View</a></li>
+                </ul>
+            </div><!-- /navbar -->
+
+            <div data-role="content" class="tight full">
+                <div id="rotatorContainer">
+                    <div id="rotator-background"></div>
+                    <div id="rotator-items-container">
+                        <ul class="items"></ul>
+                    </div>
+                </div>
+            </div><!-- /content -->
+
+            <div data-role="footer">
+                <h4>Copyright 2012 Cloud CMS</h4>
+            </div><!-- /footer -->
+
+        </div><!-- /page -->
+
+        <!-- LIST PAGE -->
+        <div data-role="page" data-theme="a" id="list"">
+
+            <div data-role="header">
+                <h1 class="selectorTitle">Select a Document</h1>
+                <a href="#splash" data-icon="delete" class="quitbutton ui-btn-right" data-transition="fade">Quit</a>
+            </div><!-- /header -->
+
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#rotator" data-transition="fade">Rotator View</a></li>
+                    <li><a href="#list" class="ui-btn-active" data-transition="fade">List View</a></li>
+                </ul>
+            </div><!-- /navbar -->
+
+            <div data-role="content">
+                <div>
+                    <input placeholder="Enter your search terms..." data-type="search" name="search" id="search" value="" class="kbtext" />
+                </div>
+                <div>
+                    <ul data-role="listview" id="tlist" style="margin-top: 15px">
+                    </ul>
+                </div>
+            </div><!-- /content -->
+
+            <div data-role="footer">
+                <h4>Copyright 2012 Cloud CMS</h4>
+            </div><!-- /footer -->
+
+        </div><!-- /page -->
+
+        <!-- MAGAZINE PAGE -->
+        <div data-role="page" data-theme="a" id="magazine">
+            <div data-role="header">
+                <h1 id="magazineTitle">Magazine</h1>
+				<a href="" data-icon="back" class="backbutton">Back</a>
+                <a href="#splash" data-icon="delete" class="quitbutton ui-btn-right" data-transition="fade">Quit</a>
+            </div><!-- /header -->
+            <div data-role="content" style="padding: 15px 0 0 0">
+
+                <div id="viewport">
+
+                </div>
+
+            </div><!-- /content -->
+            <div data-role="footer">
+                <h4>Copyright 2012 Cloud CMS</h4>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+    </body>
+
+</html>
